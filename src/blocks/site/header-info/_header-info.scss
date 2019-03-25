@@ -1,0 +1,56 @@
+.header-info {
+  padding-top: rem-calc(22);
+  padding-bottom: rem-calc(60);
+
+  &__right {
+    text-align: right;
+  }
+
+  &__tel {
+    display: block;
+    font-family: $font-exo;
+    font-weight: 700;
+    font-size: rem-calc(20);
+    color: $black;
+    transition: 0.3s ease;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $alert-color;
+      text-decoration: none;
+    }
+  }
+
+  &__order {
+    font-family: $font-exo;
+    font-weight: 400;
+    font-size: rem-calc(14);
+    color: $alert-color;
+    text-decoration: underline;
+    background-color: transparent;
+    border: none;
+    transition: 0.3s ease;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: lighten($alert-color, 5%)
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+
+    &__right {
+      text-align: center;
+    }
+
+    &__tel {
+      font-size: rem-calc(18);
+    }
+  
+    &__order {
+      font-size: rem-calc(12);
+    }
+  }
+}

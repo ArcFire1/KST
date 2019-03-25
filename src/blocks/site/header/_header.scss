@@ -1,0 +1,103 @@
+.header {
+  
+  &-wrapper {
+    background-color: rgba(0, 23, 38, 0.2);
+  }
+
+  &-hamb {
+    display: none;
+    position: absolute;
+    overflow: hidden;
+    top: rem-calc(150);
+    left: 100%;
+    margin: 0;
+    padding: 0;
+    height: rem-calc(40);
+    width: rem-calc(40);
+    border-radius: rem-calc(0 10 10 0);
+    border: none;
+    cursor: pointer;
+    background: $main-color;
+
+    &:focus {
+      outline: none;
+    }
+
+    &__line {
+      display: block;
+      position: absolute;
+      top: rem-calc(20);
+      left: rem-calc(10);
+      right: rem-calc(10);
+      height: rem-calc(2);
+      background: $black;
+
+      &:before,
+      &:after {
+        position: absolute;
+        display: block;
+        left: 0;
+        width: 100%;
+        height: rem-calc(2);
+        background-color: $black;
+        content: "";
+        transition-duration: 0.3s, 0.3s;
+        transition-delay: 0.3s, 0;
+      }
+
+      &:before {
+        top: rem-calc(-7);
+        transition-property: top, transform;
+      }
+
+      &:after {
+        bottom: rem-calc(-7);
+        transition-property: bottom, transform;
+      }
+    }
+
+    &_active {
+      & .header-hamb__line {
+        background-color: $white;
+
+        &:before {
+          top: 0;
+          transform: rotate(45deg);
+        }
+
+        &:after {
+          bottom: 0;
+          transform: rotate(-45deg);
+        }
+
+        &:before,
+        &:after {
+          transition-delay: 0, 0.3s;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding-left: 30%;
+      height: 100vh;
+      width: 100%;
+      transform: translateX(-100%);
+      background-color: $main-color;
+      transition: 0.3s ease all;
+      z-index: 100;
+
+      &_active {
+        transform: translateX(-30%);
+      }
+    }
+
+    &-hamb {
+      display: block;
+    }
+  }
+}

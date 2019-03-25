@@ -1,0 +1,53 @@
+.checkbox {
+  position: relative;
+  padding-left: rem-calc(30);
+  font-size: rem-calc(10);
+  color: $dark-gray;
+  cursor: pointer;
+
+  &__input {
+    display: inline-block;
+    position: absolute;
+    height: rem-calc(1);
+    width: rem-calc(1);
+    clip: rect(0 0 0 0);
+
+    &:checked + .checkbox__label {
+      background-color: $white;
+
+      &:after {
+        display: block;
+      }
+    }
+  }
+
+  &__label {
+    position: absolute;
+    padding: rem-calc(2);
+    top: 50%;
+    left: 0;
+    height: 1.42857rem;
+    width: 1.42857rem;
+    border: rem-calc(1) solid $dark-gray;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: 0.3s ease;
+
+    &:after {
+      display: none;
+      position: absolute;
+      content: '';
+      background-color: $alert-color;
+      top: rem-calc(5);
+      left: rem-calc(5);
+      right: rem-calc(5);
+      bottom: rem-calc(5);
+      transition: 0.3s ease;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $white;
+    }
+  }
+}

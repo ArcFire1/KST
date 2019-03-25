@@ -1,0 +1,40 @@
+.modal {
+  display: block;
+  width: 100%;
+  max-width: rem-calc(400);
+  margin-top: rem-calc(40);
+  margin-left: auto;
+  margin-right: auto;
+
+  &-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 200;
+  }
+
+  &-close {
+    position: absolute;
+    top: rem-calc(10);
+    right: rem-calc(10);
+    font-weight: 700;
+    font-size: rem-calc(24);
+    line-height: 1;
+    border: none;
+    background: none;
+    color: $alert-color;
+  }
+
+  &-open {
+    overflow: hidden;
+  }
+}
+
+.is-open {
+  display: block;
+}

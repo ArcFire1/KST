@@ -1,0 +1,85 @@
+doctype html
+html.no-js(lang='ru')
+  include components/service/_head
+  body.promo
+    //- mixins
+    include ../blocks/site/plus-card/_plus-card
+    include ../blocks/site/checkbox/_checkbox
+
+    //- header
+    header.header
+      .header-wrapper
+        .container
+          nav.row
+            button.header-hamb(type="button")
+              span.header-hamb__line
+            ul.header-nav
+              each i in ['Услуги', 'Преимущества', 'Материалы', 'Портфолио', 'Отзывы', 'Контакты']
+                li.header-nav__item: a.header-nav__link(href="#")= i
+      .container.header-info
+        .row.justify-content-md-between
+          .col-xs-12.col-md-4
+            a.logo(href="#")
+              include ../images/logo.svg
+              | Кровли, фасады, БМЗ, 
+              br
+              | металлоконструкции
+          .col-xs-12.col-md-auto.header-info__right
+            a.header-info__tel(href="tel:+79787872546") +7 (978) 787-25-46
+            button.header-info__order.modal-button(type="button" data-target="#order") Заказать звонок        
+
+    //- main content
+    .container.advert
+      img.advert__image(src="./i/man.png" alt="man")
+      .row
+        .col-lg-6.col-xl-7
+          h1.advert__title Кровельные работы с гарантией 10 лет в симферополе и по крыму
+      .row.justify-content-md-between
+        .col-md-6.col-xl-7.pluses
+          +plus-card('./images/calendar.svg', 'Быстро', 'от 4-х дней')
+          +plus-card('./images/hands.svg', 'Выгодно', 'наши цены Вас порадуют')
+          +plus-card('./images/medal.svg', 'Надежно', 'гарантия 10 лет')
+    
+        .col-md-6.col-xl-4
+          .getprice
+            h2.getprice__title Узайте цену 
+              br
+              | за 3 минуты
+            p.getprice__text Оставьте заявку на расчет цены 
+              br
+              | и узнайте точные сроки и стоимость работ
+            form.getprice-form(action="#" method="POST")
+              .getprice-form__field
+                input.getprice-form__input(type="text")
+                .getprice-form__icon
+                  include ../images/user.svg
+              .getprice-form__field  
+                input.getprice-form__input(type="tel")
+                .getprice-form__icon
+                  include ../images/phone.svg
+              button.getprice-form__button(type="submit") Узнать цену
+              +checkbox('Согласие с политикой конфиценциальности', false)
+
+    //- modal
+  .modal-overlay#order: .getprice.modal
+    h2.getprice__title Узайте цену 
+      br
+      | за 3 минуты
+    p.getprice__text Оставьте заявку на расчет цены 
+      br
+      | и узнайте точные сроки и стоимость работ
+    form.getprice-form(action="#" method="POST")
+      .getprice-form__field
+        input.getprice-form__input(type="text")
+        .getprice-form__icon
+          include ../images/user.svg
+      .getprice-form__field  
+        input.getprice-form__input(type="tel")
+        .getprice-form__icon
+          include ../images/phone.svg
+      button.getprice-form__button(type="submit") Узнать цену
+      +checkbox('Согласие с политикой конфиценциальности', false)
+
+    button.modal-close(type="button") &times;  
+      
+    include components/service/_js

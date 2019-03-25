@@ -1,0 +1,13 @@
+// Proxima Nova Regular
+@font-face {
+  font-family: 'ProximaNova-webfont';
+  src: url($fontsPath + '/proximanova/ProximaNova-Regular.woff2') format('woff2'),
+       url($fontsPath + '/proximanova/ProximaNova-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+// Exo 2 Regular, Semibold, Bold
+@import url('https://fonts.googleapis.com/css?family=Exo+2:400,600,700&subset=cyrillic');
+
+$font-exo: 'Exo 2', 'Roboto', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$font-proxima: 'ProximaNova-webfont', 'Roboto', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;

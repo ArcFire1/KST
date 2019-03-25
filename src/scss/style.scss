@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+$imagesPath: '../images' !default;
+$iPath: '../i' !default;
+$fontsPath: '../fonts' !default;
+
+// Main settings
+@import "settings/*.scss";
+
+// Bootstrap Grid
+@import "functions";
+@import "variables";
+@import "mixins";
+@import "reboot";
+@import "utilities/_flex";
+@import "grid";
+
+// Components
+@import "../blocks/**/*.scss";
+@import "common";

@@ -1,0 +1,5 @@
+mixin checkbox(text,disabled)
+  -var id =  Math.ceil(Math.random() * 1000);
+  label.checkbox= text
+    input.checkbox__input(type="checkbox" id=id disabled=disabled)
+    span.checkbox__label(for=id)

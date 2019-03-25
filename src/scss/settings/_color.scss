@@ -1,0 +1,27 @@
+$colors-palette: (
+  primary: #27bab5,
+  secondary: #634f8e,
+  alert: #dd2c14,
+  main: #fafafa,
+  light-gray: #e6e6e6,
+  medium-gray: #c9c9c6,
+  dark-gray: #8a8a8a,
+  black: #000,
+  white: #fff,
+);
+
+$main-color: map-get($colors-palette, main);
+$primary-color: map-get($colors-palette, primary);
+$secondary-color: map-get($colors-palette, secondary);
+$tertiary: map-get($colors-palette, tertiary);
+$quaternary: map-get($colors-palette, quaternary);
+$success-color: map-get($colors-palette, success);
+$warning-color: map-get($colors-palette, warning);
+$alert-color: map-get($colors-palette, alert);
+$light-gray: map-get($colors-palette, light-gray);
+$medium-gray: map-get($colors-palette, medium-gray);
+$dark-gray: map-get($colors-palette, dark-gray);
+$black: map-get($colors-palette, black);
+$white: map-get($colors-palette, white);
+
+
